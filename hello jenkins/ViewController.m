@@ -17,6 +17,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *configuration = [[mainBundle infoDictionary] objectForKey:@"Configuration"];
+    
+    // Load Configurations
+    NSString *path = [mainBundle pathForResource:@"Configurations" ofType:@"plist"];
+    NSDictionary *configurations = [[NSDictionary dictionaryWithContentsOfFile:path] objectForKey:configuration];
+    
+    NSLog(@"Current Configuration > %@", configuration);
+    NSLog(@"Current Welcome Title > %@", [configurations objectForKey:@"TitleWelcome"]);
+    
+
+    
+    self.lblTitleWelcome.text = [configurations objectForKey:@"TitleWelcome"] ;
+   
 }
 
 - (void)didReceiveMemoryWarning {

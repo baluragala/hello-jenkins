@@ -10,12 +10,24 @@
 
 @interface AppDelegate ()
 
+
+
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+       
+//   for(NSString *key in [configurations allKeys]) {
+//         NSLog(@"%@",[configurations objectForKey:key]);
+//    }
+    
+   // NSLog([configurations objectForKey:configuration]);
+   
+    
+    
     // Override point for customization after application launch.
     return YES;
 }
